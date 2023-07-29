@@ -1,6 +1,5 @@
 const colorBox = document.getElementById('color-box')
 const hexBox = document.getElementById('hex-box')
-const numOfColors = document.getElementById('color-number').value
 
 
 document.getElementById('color-form').addEventListener('submit', event => {
@@ -11,15 +10,16 @@ document.getElementById('color-form').addEventListener('submit', event => {
     
     const seedColor = document.getElementById('color-input').value.replace('#','')
     const modeOfColors = document.getElementById('color-mode').value.toLowerCase()
+    const numOfColors = document.getElementById('color-number').value
     
-    fetch(`https://www.thecolorapi.com/scheme?mode=${modeOfColors}&hex=${seedColor}&count=${numOfColors}`)
-    .then(res => res.json())
-    .then(data => {
-       for(let i = 0; i < data.count; i++){
-           renderColor(data.colors[i].hex.value, i)
-           renderHexValue(data.colors[i].hex.value, i)
-       }
-    })
+    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor}&mode=${modeOfColors}&count=${numOfColors}`)
+        .then(res => res.json())
+        .then(data => {
+        for(let i = 0; i < data.count; i++){
+            renderColor(data.colors[i].hex.value, i)
+            renderHexValue(data.colors[i].hex.value, i)
+        }
+        })
 })
 
 document.addEventListener('click', event => {
@@ -62,6 +62,7 @@ function renderColor(color, id){
     colorContainer.style.backgroundColor = color
     colorBox.appendChild(colorContainer)
 }
+
 
 function renderHexValue(hexValue, id){
     let hexContainer = document.createElement('div')

@@ -1,9 +1,15 @@
-<html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <header>
+        <div class="head" id="head">
             <form id="color-form">
                 <input type="color" class="color-input" id="color-input">
                 <select id="color-mode">
@@ -24,20 +30,17 @@
                 />
                 <button>Get color scheme</button>
             </form>
-        </header>
+        </div>
         
-        <main id="color-box">
-            <!-- colors go here -->  
+        <div class="color-box" id="color-box">
             <div class="descr">
                 <h2>Pick a color, mode and number to create your desired color scheme</h2>
             </div>
-            
-               
-        </main>
+        </div>
         
-        <footer id="hex-box">
+        <div class="hex-box" id="hex-box">
             <!-- hex values go here -->
-        </footer>
+        </div>
        
         <span id="snackbar">Hex Value Copied</span>
        

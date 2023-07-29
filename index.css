@@ -14,7 +14,7 @@ h2{
 .descr{
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     margin: 0;
 }
 
@@ -22,31 +22,32 @@ h2{
        Layout
 -------------------*/
 
-header{
+.head{
     top: 0;  
     box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.15);
 }
 
-header,
-footer{
+.head,
+.hex-box{
     background-color: #ffffff;
     width: 100%;
     position: fixed;
 }
 
-main,
-footer{
+.color-box,
+.hex-box{
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(auto-fit, minmax(7em,1fr));
 }
 
-main{
-    height: 100vh;
+.color-box{
+    height: 90vh;
+    margin-top: 10vh;
     position: relative;
 }
 
-footer{
+.hex-box{
     bottom: 0;
     color: #2B283A;
     padding: 0.75em 0;
