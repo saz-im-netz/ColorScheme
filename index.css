@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+h2{
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 450px;
+}
+.descr{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin: 0;
+}
+
+/*------------------
+       Layout
+-------------------*/
+
+header{
+    top: 0;  
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.15);
+}
+
+header,
+footer{
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed;
+}
+
+main,
+footer{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(7em,1fr));
+}
+
+main{
+    height: 100vh;
+    position: relative;
+}
+
+footer{
+    bottom: 0;
+    color: #2B283A;
+    padding: 0.75em 0;
+}
+
+
+/*------------------
+        Form
+-------------------*/
+
+form {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2em;
+    padding: 1.5em;
+}
+
+input,
+select,
+button{
+    cursor: pointer;
+}
+
+input[type="color"]{
+    width: 3.8em;
+    height: 2.6em;
+    border: none;    
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border: 0.5px solid #313131;
+}
+
+input[type="number"]{
+    width: 3.8em;
+    height: 2.6em;
+    text-align: center;
+}
+
+select,
+button,
+input[type="number"]{
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    background:  #ffffff; 
+}
+
+select{
+    padding: 0.5em 1em;
+    color: #111827;
+    font-weight: 400;
+    height: 2.75em;
+    width: 20em;
+}
+button{
+    padding: 0.7em 0.8em;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #374151;
+    font-size: 0.75rem;
+    font-weight: 500;
+    height: 3.7em;
+}
+
+
+/*------------------
+       Utility
+-------------------*/
+
+.color-container{
+    height: 100%;
+    width: 100%;
+}
+
+.hex-container{
+    text-align: center;
+}
+
+#snackbar {
+    visibility: hidden;
+    color: #ffffff;
+    background-color: #374151;
+    border-radius: 2px;
+    padding: 1em 2em;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0.5em;
+    position: fixed;
+}
+
+/* This will be activated when the snackbar's class is 'show' which will be added through JS */
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.2s 1s;
+}
+
+/* Animations for fading in and out */
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 0.5em; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 0.5em; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

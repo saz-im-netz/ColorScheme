@@ -1,0 +1,46 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <form id="color-form">
+                <input type="color" class="color-input" id="color-input">
+                <select id="color-mode">
+                    <option>Monochrome</option>
+                    <option>Monochrome-dark</option>
+                    <option>Monochrome-light</option>
+                    <option>Analogic</option>
+                    <option>Complement</option>
+                    <option>Analogic-complement</option>
+                    <option>Triad</option>
+                </select>
+                <input  type="number" 
+                        class="color-number" 
+                        id="color-number" 
+                        value="5" 
+                        min="3" 
+                        max="7"
+                />
+                <button>Get color scheme</button>
+            </form>
+        </header>
+        
+        <main id="color-box">
+            <!-- colors go here -->  
+            <div class="descr">
+                <h2>Pick a color, mode and number to create your desired color scheme</h2>
+            </div>
+            
+               
+        </main>
+        
+        <footer id="hex-box">
+            <!-- hex values go here -->
+        </footer>
+       
+        <span id="snackbar">Hex Value Copied</span>
+       
+        <script src="index.js"></script>
+    </body>
+</html>
